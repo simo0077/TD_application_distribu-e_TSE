@@ -1,14 +1,19 @@
 package org.tse.td1.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Data
+@AllArgsConstructor
+
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,7 +22,7 @@ public class Task {
     private String title;
     private Integer nbrhoursforcas;
     private Integer nbrhourreel;
-    private Date created;
+    private LocalDate created;
     @ManyToOne
     private TaskStatus taskStatus;
     @ManyToOne
