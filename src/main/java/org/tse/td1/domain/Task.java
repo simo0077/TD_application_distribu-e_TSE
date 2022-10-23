@@ -13,7 +13,6 @@ import java.util.Set;
 @Entity
 @Data
 @AllArgsConstructor
-
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

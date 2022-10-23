@@ -14,7 +14,7 @@ import org.tse.td1.repositories.DeveloperRepo;
 @SpringBootTest
 @RunWith(SpringRunner.class)
 @ActiveProfiles(profiles = "test")
-public class AddDeveloperTest {
+class AddDeveloperTest {
     @Test
     void testAddDeveloperToTask(){
         Task task = new Task();

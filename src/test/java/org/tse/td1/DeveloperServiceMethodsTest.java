@@ -9,17 +9,18 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.tse.td1.domain.Developer;
 import org.tse.td1.domain.Task;
-import org.tse.td1.repositories.DeveloperRepo;
+import org.tse.td1.services.DeveloperService;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
 @ActiveProfiles(profiles = "test")
-class FindAllDeveloppersTest {
+class DeveloperServiceMethodsTest {
     @Autowired
-    DeveloperRepo developerRepo;
+    DeveloperService developerService;
+
     @Test
     void testFindAllDevelopers(){
-        Assert.assertEquals(2,developerRepo.findAll().size());
+        Assert.assertEquals(2,developerService.findAllDevelopers().size());
     }
 
 }
