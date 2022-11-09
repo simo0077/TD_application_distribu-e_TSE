@@ -9,6 +9,7 @@ import org.tse.td1.domain.Task;
 import org.tse.td1.domain.TaskStatus;
 import org.tse.td1.domain.TaskType;
 import org.tse.td1.repositories.*;
+import org.tse.td1.services.DeveloperService;
 
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -20,6 +21,12 @@ public class PopulateDb implements CommandLineRunner {
     TaskStatusRepo taskStatusRepo;
     @Autowired
     TaskTypeRepo taskTypeRepo;
+
+    @Autowired
+    DeveloperRepo developerRepo;
+
+    @Autowired
+    TaskRepo taskRepo;
 
 
     @Override
@@ -41,6 +48,15 @@ public class PopulateDb implements CommandLineRunner {
         taskTypeRepo.save(taskType2);
         taskTypeRepo.save(taskType3);
         taskTypeRepo.save(taskType4);
+
+        Developer developer = new Developer();
+        developer.setFirstname("user1");
+        developer.setLastname("user1");
+        developerRepo.save(developer);
+        Task task = new Task();
+        task.setTitle("task1");
+        task.addDeveloper(developer);
+        taskRepo.save(task);
 
 
     }
