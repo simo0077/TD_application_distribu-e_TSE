@@ -76,7 +76,6 @@ Write unit tests for these POST and PATCH endpoints.
 ## Step 6
 
 Use Bean Validation API on your Task entity to enable validation.
-
 Optionnaly, customize your API error message in cas of invalid json posted data. 
 
 ## Step 7 (Optional)

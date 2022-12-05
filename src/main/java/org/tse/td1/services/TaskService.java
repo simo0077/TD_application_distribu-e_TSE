@@ -55,7 +55,7 @@ public class TaskService implements TaskServiceI {
                 break;
         }
         task.setTaskStatus(nextStatus);
-        return task;
+        return taskRepo.save(task);
     }
 
     @Override
@@ -77,6 +77,6 @@ public class TaskService implements TaskServiceI {
                 break;
         }
         task.setTaskStatus(previousStatus);
-        return task;
+        return taskRepo.save(task);
     }
 }
