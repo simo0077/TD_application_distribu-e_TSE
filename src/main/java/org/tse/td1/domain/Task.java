@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.HashSet;
@@ -18,7 +20,10 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @NotBlank(message = "title is mandatory")
     private String title;
+
+    @NotNull(message = "number of hours for cas is mandatory")
     private Integer nbrhoursforcas;
     private Integer nbrhourreel;
     private LocalDate created;

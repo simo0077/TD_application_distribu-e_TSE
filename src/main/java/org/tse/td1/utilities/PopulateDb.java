@@ -57,6 +57,7 @@ public class PopulateDb implements CommandLineRunner {
         task.setTaskStatus(taskStatus2);
         task.setTaskType(taskType2);
         task.setTitle("task1");
+        task.setNbrhoursforcas(30);
         task.addDeveloper(developer);
         taskRepo.save(task);
 
